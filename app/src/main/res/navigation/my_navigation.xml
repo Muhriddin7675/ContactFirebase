@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.contactfirebase.ui.screen.splash.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
+        <action
+            android:id="@+id/action_splashScreen_to_contactScreen"
+            app:destination="@id/contactScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactScreen"
+        android:name="com.example.contactfirebase.ui.screen.contact.ContactScreen"
+        android:label="ContactScreen"
+        tools:layout="@layout/screen_contact">
+        <action
+            android:id="@+id/action_contactScreen_to_editScreen"
+            app:destination="@id/editScreen" />
+        <action
+            android:id="@+id/action_contactScreen_to_addScreen"
+            app:destination="@id/addScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/editScreen"
+        android:name="com.example.contactfirebase.ui.screen.edit.EditScreen"
+        android:label="EditScreen"
+        tools:layout="@layout/screen_contact_edit">
+        <argument
+            android:name="docId"
+            app:argType="string" />
+        <argument
+            android:name="firstName"
+            app:argType="string" />
+        <argument
+            android:name="lastName"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addScreen"
+        android:name="com.example.contactfirebase.ui.screen.add.AddScreen"
+        android:label="AddScreen"
+        tools:layout="@layout/screen_contact_add"/>
+</navigation>
