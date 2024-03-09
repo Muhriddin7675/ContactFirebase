@@ -67,7 +67,6 @@ class AppRepositoryImpl @Inject constructor() : AppRepository {
                 trySend(Result.failure(it))
             }
         awaitClose()
-
     }
 
     override fun deleteContact(data: ContactUIDate): Flow<Result<Unit>> = callbackFlow {
